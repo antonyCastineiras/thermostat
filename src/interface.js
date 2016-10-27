@@ -38,4 +38,17 @@ $(document).ready(function() {
     };
   }
 
+  $('#weather-form').submit(function(event){
+
+		event.preventDefault();
+		var city = $("#location-input").val();
+		var firstHalf = "http://api.openweathermap.org/data/2.5/weather?q="
+		var secondHalf = "&APPID=d631f9336b0f36782ae2b6e3d513d46e&units=metric"
+		$.get(firstHalf + city + secondHalf, function(data) {
+			$('#location').text(data.name);
+	  	$('#data-temp').text(data.main.temp+'C');
+	  	$('#weather-description').text(data.weather[0].description);
+		});
+	});
+
 });

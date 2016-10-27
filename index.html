@@ -14,16 +14,27 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row text-center">
       <section>
       <h1 class="text-center text-primary" id="temperature"></h1>
         <button class="btn btn-success" id="temperature-up">+</button>
         <button class="btn btn-danger" id="temperature-down">-</button>
-        <button class="btn btn-primary" id="temperature-reset">reset</button>
-        <strong>PSM is: <span id="power-saving-status">ON</span></strong>
+        <button class="btn btn-primary" id="temperature-reset">reset</button><br>
+        <strong>PSM is: <span id="power-saving-status">ON</span></strong><br>
         <button class="btn btn-warning" id="powersaving-toggle">Toggle PSM</button>
     </section>
     </div>
+    <div class="row text-center">
+      <h3 id="current-weather" class="text-center"><span id="location"></span> - <span id="data-temp"></span> - <span id="weather-description"></span></h3>
+      <form action="" id="weather-form">
+        <label for="location-input">
+          <input id="location-input" type="text" name="location-input"> 
+        </label>
+        <br>
+        <input class="btn btn-info" type="submit" value="Update Location">
+      </form>
+    </div>
   </div>
+
 </body>
 </html>
