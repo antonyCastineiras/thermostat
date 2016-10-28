@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'models/thermostat_state'
 
 class Thermostat < Sinatra::Base
   get '/' do
