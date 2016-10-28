@@ -9,10 +9,17 @@ class Thermostat < Sinatra::Base
   end
 
   post '/thermostat/update' do
-  	request.body.rewind
-  	data = JSON.parse(request.body.read)
-  	"the data is: #{request.body}"
+    request.body.rewind  # in case someone already read it
+    data = request.body.read
+    p data
   end
+
+=begin
+$.ajax({ type: 'POST', dataType: 'json', url: '/thermostat/update', data : { temp: 10},
+      success: function(json) {
+        alert('all done');
+      } })
+=end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
