@@ -1,5 +1,6 @@
+var thermostat = new Thermostat();
+
 $(document).ready(function() {
-  var thermostat = new Thermostat();
   updateTemperature();
 
   $('#temperature-up').on('click', function() {
@@ -51,8 +52,30 @@ $(document).ready(function() {
 		});
 	});
 
+  $('#save-state').click(function() {
+    saveState();
+  });
+
 });
 
+function createDataObject() {
+  obj = {};
+  obj['temp'] = thermostat.temperature;
+  obj['city'] = $('#location').text();
+  obj['power_saving'] = thermostat.powerSavingMode;
+  return obj;
+}
+
+function saveState() {
+  data = createDataObject();
+  $.ajax({
+    type: 'post',
+    dataType: 'json',
+    url: '/thermostat/update',
+    data: JSON.stringify(data),
+    success: function() { console.log("success") }
+  })
+}
 
 // $.ajax({ type: 'POST', url: '/thermostat/update', data: 10 })
 
