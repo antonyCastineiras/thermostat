@@ -11,7 +11,7 @@ class Thermostat < Sinatra::Base
   post '/thermostat/update' do
     request.body.rewind  # in case someone already read it
     data = request.body.read
-    p data
+    ThermostatState.create(temperature: data[-2,2]) #temp=10
   end
 
 =begin

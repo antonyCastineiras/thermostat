@@ -5,7 +5,7 @@ class ThermostatState
   include DataMapper::Resource
 
   property :id, Serial
-  property :temperature, Integer
+  property :temperature, Text
 end
 
 DataMapper.setup(:default, ENV['DATABSE_URL'] || "postgres://localhost/thermostat_development")

@@ -52,3 +52,8 @@ $(document).ready(function() {
 	});
 
 });
+
+
+// $.ajax({ type: 'POST', url: '/thermostat/update', data: 10 })
+
+//
