@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thermostat</title>
+  <script src="src/Thermostat.js"></script>
+  <script src="src/interface.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <section>
+      <h1 class="text-center text-primary" id="temperature"></h1>
+        <button class="btn btn-success" id="temperature-up">+</button>
+        <button class="btn btn-danger" id="temperature-down">-</button>
+        <button class="btn btn-primary" id="temperature-reset">reset</button><br>
+        <strong>PSM is: <span id="power-saving-status">ON</span></strong><br>
+        <button class="btn btn-warning" id="powersaving-toggle">Toggle PSM</button>
+    </section>
+    </div>
+    <div class="row text-center">
+      <h3 id="current-weather" class="text-center"><span id="location"></span> - <span id="data-temp"></span> - <span id="weather-description"></span></h3>
+      <form action="" id="weather-form">
+        <label for="location-input">
+          <input id="location-input" type="text" name="location-input"> 
+        </label>
+        <br>
+        <input class="btn btn-info" type="submit" value="Update Location">
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

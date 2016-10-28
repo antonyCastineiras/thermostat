@@ -7,6 +7,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 
 group :test do
+  gem 'rerun'
   gem 'rspec'
   gem 'cucumber'
   gem 'capybara'
